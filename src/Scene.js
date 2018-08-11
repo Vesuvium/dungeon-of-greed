@@ -20,8 +20,13 @@ class Scene {
         }
     }
 
+    initControls() {
+        this.keyboard = this.game.input.keyboard.createCursorKeys();
+    }
+
     preload() {
         /* Loads all assets */
+        this.initControls();
         this.sword.preload();
         this.key.preload();
         this.potion.preload();
@@ -38,6 +43,18 @@ class Scene {
 
     update() {
         /* Updates the scene*/
+        if (this.keyboard.left.isDown) {
+            this.player.moveX(-10);
+        }
+        else if (this.keyboard.right.isDown) {
+            this.player.moveX(10);
+        }
+        else if (this.keyboard.down.isDown) {
+            this.player.moveY(10);
+        }
+        else if (this.keyboard.up.isDown) {
+            this.player.moveY(-10);
+        }
     }
 }
 
