@@ -1,6 +1,9 @@
 import 'phaser';
 
-import Preload from './Preload.js';
+import Scene from './Scene.js';
+
+
+const scene = new Scene();
 
 const config = {
     type: Phaser.AUTO,
@@ -9,10 +12,15 @@ const config = {
     height: 600,
     scene: {
         preload: function() {
-            Preload.preload(this.load);
+            scene.config(this);
+            scene.preload();
         },
-        create: create,
-        update: update
+        create: function() {
+            scene.create();
+        },
+        update: function() {
+            scene.update();
+        }
     }
 };
 
