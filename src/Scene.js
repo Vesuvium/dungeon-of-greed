@@ -1,6 +1,7 @@
 'use strict';
 
 import Item from './Item.js';
+import LoadingBar from './LoadingBar.js';
 import Player from './Player.js';
 
 
@@ -26,6 +27,7 @@ class Scene {
 
     preload() {
         /* Loads all assets */
+        new LoadingBar(this.game);
         this.initControls();
         this.sword.preload();
         this.key.preload();
