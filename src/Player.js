@@ -16,7 +16,6 @@ class Player {
     }
 
     isInCanvas(x, y) {
-        console.log(x, y);
         if (x < 0) {
             return false;
         }
