@@ -10,6 +10,12 @@ const config = {
     parent: 'phaser-example',
     width: 800,
     height: 600,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            debug: true
+        }
+    },
     scene: {
         preload: function() {
             scene.init(this);
