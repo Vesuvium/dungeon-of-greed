@@ -16,7 +16,6 @@ class LoadingBar {
         this.box.fillStyle(0x222222, 0.8);
         this.box.fillRect(240, 270, 320, 50);
         this.bar = this.game.add.graphics();
-        console.log(this.bar);
         this.loadingText = new Text(this.game, halfWidth, (height/2-50), 'Loading...', style);
         this.loadingText.origin(0.5, 0.5);
         this.percentage = new Text(this.game, halfWidth, (height/2-5), '0%', style);
