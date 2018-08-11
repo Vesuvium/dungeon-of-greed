@@ -2,6 +2,8 @@ class Player {
     constructor(game) {
         this.physics = game.physics;
         this.load = game.load;
+        this.boundaryX = game.sys.canvas.width;
+        this.boundaryY = game.sys.canvas.height;
     }
 
     preload(sprite, options) {
@@ -13,13 +15,35 @@ class Player {
         this.player = this.physics.add.sprite(x, y, 'player');
     }
 
-    moveX(x) {
-        this.player.setX(this.player.x + x);
+    isInCanvas(x, y) {
+        console.log(x, y);
+        if (x < 0) {
+            return false;
+        }
+        if (x > this.boundaryX) {
+            return false;
+        }
+        if (y < 0) {
+            return false;
+        }
+        if (y > this.boundaryY) {
+            return false;
+        }
+        return true;
+    }
 
+    moveX(x) {
+        const newX = this.player.x + x;
+        if (this.isInCanvas(newX, this.player.y)) {
+            this.player.setX(newX);
+        }
     }
 
     moveY(y) {
-        this.player.setY(this.player.y + y);
+        const newY = this.player.y + y;
+        if (this.isInCanvas(this.player.x, newY)) {
+            this.player.setY(newY);
+        }
     }
 }
 
