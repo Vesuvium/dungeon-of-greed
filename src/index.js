@@ -1,22 +1,24 @@
 import 'phaser';
 
+import Preload from './Preload.js';
+
 const config = {
     type: Phaser.AUTO,
     parent: 'phaser-example',
     width: 800,
     height: 600,
     scene: {
-        preload: preload,
-        create: create
+        preload: function() {
+            Preload.preload(this.load);
+        },
+        create: create,
+        update: update
     }
 };
 
 var game = new Phaser.Game(config);
 
 
-function preload () {
-    this.load.image('logo', 'assets/logo.png');
-}
 
 function create (){
     var logo = this.add.image(400, 150, 'logo');
