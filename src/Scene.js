@@ -1,5 +1,6 @@
 'use strict';
 
+import Item from './Item.js';
 import Player from './Player.js';
 
 
@@ -13,21 +14,25 @@ class Scene {
             this.load = game.load;
             this.add = game.add;
             this.player = new Player(game);
+            this.sword = new Item(game, 'sword');
+            this.key = new Item(game, 'key');
+            this.potion = new Item(game, 'potion');
         }
     }
 
     preload() {
         /* Loads all assets */
-        this.load.image('sword', 'assets/sword.png');
-        this.load.image('key', 'assets/key.png');
-        this.load.image('potion', 'assets/potion.png');
+        this.sword.preload();
+        this.key.preload();
+        this.potion.preload();
         this.player.preload('assets/player.png', { frameWidth: 16, frameHeight: 20 });
     }
 
     create() {
         /* Creates the scene objects */
-        this.add.image(200, 100, 'key');
-        this.add.image(500, 400, 'potion');
+        this.sword.create(200, 200);
+        this.key.create(200, 100);
+        this.potion.create(500, 400);
         this.player.create(300, 400);
     }
 
