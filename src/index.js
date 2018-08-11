@@ -12,7 +12,7 @@ const config = {
     height: 600,
     scene: {
         preload: function() {
-            scene.config(this);
+            scene.init(this);
             scene.preload();
         },
         create: function() {

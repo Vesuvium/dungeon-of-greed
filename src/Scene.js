@@ -9,7 +9,7 @@ class Scene {
     constructor() {
     }
 
-    config(game) {
+    init(game) {
         if (!this.game) {
             this.game = game;
             this.load = game.load;
