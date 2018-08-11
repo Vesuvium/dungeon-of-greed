@@ -10,7 +10,16 @@ class Player {
     }
 
     create(x, y) {
-        this.physics.add.sprite(x, y, 'player');
+        this.player = this.physics.add.sprite(x, y, 'player');
+    }
+
+    moveX(x) {
+        this.player.setX(this.player.x + x);
+
+    }
+
+    moveY(y) {
+        this.player.setY(this.player.y + y);
     }
 }
 
