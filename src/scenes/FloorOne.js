@@ -1,33 +1,21 @@
 'use strict';
 
-import Phaser from 'phaser';
-import LoadingBar from '../ui/LoadingBar.js';
 import Item from '../sprites/Item.js';
 import Player from '../sprites/Player.js';
+import Scene from './Scene.js';
 
 
-class FloorOne extends Phaser.Scene {
-    constructor(config) {
-        super(config);
-    }
-
+class FloorOne extends Scene {
     init(phaser) {
-        if (!this.phaser) {
-            this.phaser = phaser;
-            this.player = new Player(this);
-            this.sword = new Item(this, 'sword');
-            this.key = new Item(this, 'key');
-            this.potion = new Item(this, 'potion');
-        }
-    }
-
-    initControls() {
-        this.keyboard = this.input.keyboard.createCursorKeys();
+        super.init(phaser, {loadingBar: true});
+        this.player = new Player(this);
+        this.sword = new Item(this, 'sword');
+        this.key = new Item(this, 'key');
+        this.potion = new Item(this, 'potion');
     }
 
     preload() {
-        new LoadingBar(this);
-        this.initControls();
+        super.preload();
         this.sword.preload();
         this.key.preload();
         this.potion.preload();
