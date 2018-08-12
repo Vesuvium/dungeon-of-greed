@@ -31,6 +31,10 @@ class Scene extends Phaser.Scene {
     update() {
 
     }
+
+    next(scene) {
+        this.scene.start(scene);
+    }
 }
 
 export default Scene;
