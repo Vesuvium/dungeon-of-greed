@@ -6,7 +6,7 @@ import Item from '../sprites/Item.js';
 import Player from '../sprites/Player.js';
 
 
-class Scene extends Phaser.Scene {
+class FloorOne extends Phaser.Scene {
     constructor(config) {
         super(config);
     }
@@ -57,4 +57,4 @@ class Scene extends Phaser.Scene {
     }
 }
 
-export default Scene;
+export default FloorOne;

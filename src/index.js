@@ -1,6 +1,6 @@
 import 'phaser';
 
-import Scene from './scenes/Scene.js';
+import FloorOne from './scenes/FloorOne.js';
 
 
 const config = {
@@ -18,10 +18,10 @@ const config = {
         preload: function() {},
         create: function() {},
         update: function() {
-            this.scene.start('First');
+            this.scene.start('FloorOne');
         }
     }
 };
 
 const game = new Phaser.Game(config);
-game.scene.add('First', Scene);
+game.scene.add('FloorOne', FloorOne);
