@@ -1,33 +1,32 @@
 'use strict';
 
+import Phaser from 'phaser';
 import Item from './Item.js';
 import LoadingBar from './LoadingBar.js';
 import Player from './Player.js';
 
 
-class Scene {
-    constructor() {
+class Scene extends Phaser.Scene {
+    constructor(config) {
+        super(config);
     }
 
-    init(game) {
-        if (!this.game) {
-            this.game = game;
-            this.load = game.load;
-            this.add = game.add;
-            this.player = new Player(game);
-            this.sword = new Item(game, 'sword');
-            this.key = new Item(game, 'key');
-            this.potion = new Item(game, 'potion');
+    init(phaser) {
+        if (!this.phaser) {
+            this.phaser = phaser;
+            this.player = new Player(this);
+            this.sword = new Item(this, 'sword');
+            this.key = new Item(this, 'key');
+            this.potion = new Item(this, 'potion');
         }
     }
 
     initControls() {
-        this.keyboard = this.game.input.keyboard.createCursorKeys();
+        this.keyboard = this.input.keyboard.createCursorKeys();
     }
 
     preload() {
-        /* Loads all assets */
-        new LoadingBar(this.game);
+        new LoadingBar(this);
         this.initControls();
         this.sword.preload();
         this.key.preload();
@@ -36,7 +35,6 @@ class Scene {
     }
 
     create() {
-        /* Creates the scene objects */
         this.sword.create(200, 200);
         this.key.create(200, 100);
         this.potion.create(500, 400);
@@ -44,7 +42,6 @@ class Scene {
     }
 
     update() {
-        /* Updates the scene*/
         if (this.keyboard.left.isDown) {
             this.player.moveX(-10);
         }
