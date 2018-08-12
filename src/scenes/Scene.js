@@ -1,9 +1,9 @@
 'use strict';
 
 import Phaser from 'phaser';
-import Item from './Item.js';
-import LoadingBar from './LoadingBar.js';
-import Player from './Player.js';
+import Item from '../Item.js';
+import LoadingBar from '../ui/LoadingBar.js';
+import Player from '../sprites/Player.js';
 
 
 class Scene extends Phaser.Scene {

@@ -1,6 +1,6 @@
 import 'phaser';
 
-import Scene from './Scene.js';
+import Scene from './scenes/Scene.js';
 
 
 const config = {
