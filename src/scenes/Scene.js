@@ -1,8 +1,8 @@
 'use strict';
 
 import Phaser from 'phaser';
-import Item from '../Item.js';
 import LoadingBar from '../ui/LoadingBar.js';
+import Item from '../sprites/Item.js';
 import Player from '../sprites/Player.js';
 
 
