@@ -3,8 +3,6 @@ import 'phaser';
 import Scene from './Scene.js';
 
 
-const scene = new Scene();
-
 const config = {
     type: Phaser.AUTO,
     parent: 'phaser-example',
@@ -17,17 +15,13 @@ const config = {
         }
     },
     scene: {
-        preload: function() {
-            scene.init(this);
-            scene.preload();
-        },
-        create: function() {
-            scene.create();
-        },
+        preload: function() {},
+        create: function() {},
         update: function() {
-            scene.update();
+            this.scene.start('First');
         }
     }
 };
 
-new Phaser.Game(config);
+const game = new Phaser.Game(config);
+game.scene.add('First', Scene);
