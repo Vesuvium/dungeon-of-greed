@@ -16,9 +16,10 @@ class LoadingBar {
         this.box.fillStyle(0x222222, 0.8);
         this.box.fillRect(240, 270, 320, 50);
         this.bar = this.game.add.graphics();
-        this.loadingText = new Text(this.game, halfWidth, (height/2-50), 'Loading...', style);
+        this.loadingText = new Text(this.game, 'Loading...', halfWidth, (height/2-50), style);
         this.loadingText.origin(0.5, 0.5);
-        this.percentage = new Text(this.game, halfWidth, (height/2-5), '0%', style);
+        style.fill = '#000';
+        this.percentage = new Text(this.game, '0%', halfWidth, (height/2-5), style);
         this.percentage.origin(0.5, 0.5);
         this.game.load.on('progress', this.progress());
         this.game.load.on('complete', this.complete());
