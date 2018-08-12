@@ -1,12 +1,17 @@
 class Text {
-    constructor(game, x, y, text, style) {
-        this.make = game.make;
-        this.create(x, y, text, style);
+
+    constructor(phaser, text, x, y, style, options) {
+        this.phaser = phaser;
+        this.create(text, x, y, style, options);
     }
 
-    create(x, y, text, style) {
-        const options = {x: x, y: y, text: text, style: style};
-        this.text = this.make.text(options);
+    create(text, x, y, style, options) {
+        this.text = this.phaser.add.text(x, y, text, style);
+        if (options) {
+            if (options.interactive) {
+                this.text.setInteractive();
+            }
+        }
     }
 
     origin(x, y) {
@@ -15,6 +20,10 @@ class Text {
 
     write(text) {
         this.text.setText(text);
+    }
+
+    event(event, f) {
+        this.text.on(event, f);
     }
 
     destroy() {
