@@ -14,9 +14,6 @@ class Boot extends Scene {
         this.button.origin(0.5, 0.5);
         this.button.event('pointerdown', () => {
             this.next('FloorOne');
-        })
-        this.button.text.on('pointerdown', () => {
-            this.next('FloorOne');
         });
     }
 }
