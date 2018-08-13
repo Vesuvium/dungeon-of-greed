@@ -6,6 +6,7 @@ class Player extends Sprites {
         super(phaser, 'player', spriteOptions, {physics: true});
         this.boundaryX = this.phaser.sys.canvas.width;
         this.boundaryY = this.phaser.sys.canvas.height;
+        this.inventory = [];
     }
 
     isInCanvas(x, y) {
@@ -52,6 +53,12 @@ class Player extends Sprites {
         else if (keyboard.up.isDown) {
             this.moveY(-10);
         }
+    }
+
+    pickItem(item) {
+        item.disableBody(true, true);
+        item.destroy();
+        this.inventory.push(item.name);
     }
 }
 
