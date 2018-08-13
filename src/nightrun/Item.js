@@ -15,16 +15,24 @@ class Item {
         this.phaser.load.image(this.name, `assets/${this.name}.png`);
     }
 
-    create() {
-        let context = this.phaser;
+    creationContext() {
+        /* Get the creation context of an item, that is whether it has
+           physics enabled or not */
         if (this.options) {
             if (this.options.physics) {
-                context = this.phaser.physics;
+                return this.phaser.physics;
             }
         }
+        return this.phaser;
+    }
+
+    create() {
+        const context = this.creationContext();
         const x = this.spawn.x;
         const y = this.spawn.y;
         this.item = context.add.image(x, y, this.name);
+        this.item.name = this.name;
+        this.item.setData('x', 'magic');
     }
 }
 
