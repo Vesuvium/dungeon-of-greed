@@ -44,7 +44,7 @@ class FloorOne extends Scene {
     }
 
     pickItem(player, item) {
-        this.player.pickItem(item)
+        this.player.pickItem(item);
     }
 
     fight(player, spider) {
@@ -54,6 +54,9 @@ class FloorOne extends Scene {
     update() {
         this.player.update();
         this.spider.update();
+        if (this.player.inventory.length == 3) {
+            this.next('End');
+        }
     }
 }
 
