@@ -2,6 +2,7 @@
 
 import Item from '../nightrun/Item.js';
 import Scene from '../nightrun/Scene.js';
+import Spider from '../sprites/Spider.js';
 import Player from '../sprites/Player.js';
 
 
@@ -16,6 +17,8 @@ class FloorOne extends Scene {
         this.key.setSpawn(200, 100);
         this.potion = new Item(this, 'potion', {physics: true});
         this.potion.setSpawn(500, 400);
+        this.spider = new Spider(this);
+        this.spider.setSpawn(600, 200);
     }
 
     preload() {
@@ -24,6 +27,7 @@ class FloorOne extends Scene {
         this.key.preload();
         this.potion.preload();
         this.player.preload();
+        this.spider.preload();
     }
 
     create() {
@@ -31,18 +35,25 @@ class FloorOne extends Scene {
         this.sword.create();
         this.key.create();
         this.potion.create();
+        this.spider.create();
         player.create();
         this.physics.add.overlap(player.sprite, this.sword.item, this.pickItem, null, this);
         this.physics.add.overlap(player.sprite, this.key.item, this.pickItem, null, this);
         this.physics.add.overlap(player.sprite, this.potion.item, this.pickItem, null, this);
+        this.physics.add.overlap(player.sprite, this.spider.sprite, this.fight, null, this);
     }
 
     pickItem(player, item) {
         this.player.pickItem(item)
     }
 
+    fight(player, spider) {
+        this.player.fight(this.spider);
+    }
+
     update() {
         this.player.update();
+        this.spider.update();
     }
 }
 
