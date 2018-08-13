@@ -1,18 +1,11 @@
-class Player {
-    constructor(game) {
-        this.physics = game.physics;
-        this.load = game.load;
-        this.boundaryX = game.sys.canvas.width;
-        this.boundaryY = game.sys.canvas.height;
-    }
+import Sprites from './Sprites.js';
 
-    preload(sprite, options) {
-        this.sprite = sprite;
-        this.load.spritesheet('player', sprite, options);
-    }
 
-    create(x, y) {
-        this.player = this.physics.add.sprite(x, y, 'player');
+class Player extends Sprites {
+    constructor(phaser, spriteOptions) {
+        super(phaser, 'player', spriteOptions, {physics: true});
+        this.boundaryX = this.phaser.sys.canvas.width;
+        this.boundaryY = this.phaser.sys.canvas.height;
     }
 
     isInCanvas(x, y) {
@@ -32,16 +25,16 @@ class Player {
     }
 
     moveX(x) {
-        const newX = this.player.x + x;
-        if (this.isInCanvas(newX, this.player.y)) {
-            this.player.setX(newX);
+        const newX = this.sprite.x + x;
+        if (this.isInCanvas(newX, this.sprite.y)) {
+            this.sprite.setX(newX);
         }
     }
 
     moveY(y) {
-        const newY = this.player.y + y;
-        if (this.isInCanvas(this.player.x, newY)) {
-            this.player.setY(newY);
+        const newY = this.sprite.y + y;
+        if (this.isInCanvas(this.sprite.x, newY)) {
+            this.sprite.setY(newY);
         }
     }
 }
