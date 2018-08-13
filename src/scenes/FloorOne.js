@@ -27,10 +27,18 @@ class FloorOne extends Scene {
     }
 
     create() {
+        const player = this.player;
         this.sword.create();
         this.key.create();
         this.potion.create();
-        this.player.create();
+        player.create();
+        this.physics.add.overlap(player.sprite, this.sword.item, this.pickItem, null, this);
+        this.physics.add.overlap(player.sprite, this.key.item, this.pickItem, null, this);
+        this.physics.add.overlap(player.sprite, this.potion.item, this.pickItem, null, this);
+    }
+
+    pickItem(player, item) {
+        this.player.pickItem(item)
     }
 
     update() {
