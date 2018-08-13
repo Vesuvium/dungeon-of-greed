@@ -1,8 +1,8 @@
 'use strict';
 
-import Item from '../sprites/Item.js';
+import Item from '../nightrun/Item.js';
+import Scene from '../nightrun/Scene.js';
 import Player from '../sprites/Player.js';
-import Scene from './Scene.js';
 
 
 class FloorOne extends Scene {
