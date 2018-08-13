@@ -1,7 +1,7 @@
-import Sprites from './Sprites.js';
+import Sprite from '../nightrun/Sprite.js';
 
 
-class Player extends Sprites {
+class Player extends Sprite {
     constructor(phaser, spriteOptions) {
         super(phaser, 'player', spriteOptions, {physics: true});
         this.boundaryX = this.phaser.sys.canvas.width;
