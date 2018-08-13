@@ -1,4 +1,4 @@
-class Sprites {
+class Sprite {
     constructor(phaser, name, spriteOptions, options) {
         this.phaser = phaser;
         this.name = name;
@@ -29,4 +29,4 @@ class Sprites {
     }
 }
 
-export default Sprites;
+export default Sprite;
