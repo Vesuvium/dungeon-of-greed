@@ -1,5 +1,5 @@
-import Scene from './Scene.js';
-import Text from '../ui/Text.js';
+import Scene from '../nightrun/Scene.js';
+import Text from '../nightrun/ui/Text.js';
 
 
 class Boot extends Scene {
