@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import LoadingBar from '../ui/LoadingBar.js';
+import LoadingBar from './ui/LoadingBar.js';
 
 
 class Scene extends Phaser.Scene {
