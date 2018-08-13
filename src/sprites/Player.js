@@ -7,6 +7,8 @@ class Player extends Sprite {
         this.boundaryX = this.phaser.sys.canvas.width;
         this.boundaryY = this.phaser.sys.canvas.height;
         this.inventory = [];
+        this.hp = 10;
+        this.attack = 1;
     }
 
     isInCanvas(x, y) {
@@ -59,6 +61,13 @@ class Player extends Sprite {
         item.disableBody(true, true);
         item.destroy();
         this.inventory.push(item.name);
+    }
+
+    fight(target) {
+        target.damage(this.attack);
+        if (target.isAlive()) {
+            this.hp -= target.attack();
+        }
     }
 }
 
