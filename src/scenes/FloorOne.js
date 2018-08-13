@@ -34,18 +34,7 @@ class FloorOne extends Scene {
     }
 
     update() {
-        if (this.keyboard.left.isDown) {
-            this.player.moveX(-10);
-        }
-        else if (this.keyboard.right.isDown) {
-            this.player.moveX(10);
-        }
-        else if (this.keyboard.down.isDown) {
-            this.player.moveY(10);
-        }
-        else if (this.keyboard.up.isDown) {
-            this.player.moveY(-10);
-        }
+        this.player.update();
     }
 }
 

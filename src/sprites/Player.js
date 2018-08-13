@@ -37,6 +37,22 @@ class Player extends Sprites {
             this.sprite.setY(newY);
         }
     }
+
+    update() {
+        const keyboard = this.phaser.keyboard;
+        if (keyboard.left.isDown) {
+            this.moveX(-10);
+        }
+        else if (keyboard.right.isDown) {
+            this.moveX(10);
+        }
+        else if (keyboard.down.isDown) {
+            this.moveY(10);
+        }
+        else if (keyboard.up.isDown) {
+            this.moveY(-10);
+        }
+    }
 }
 
 
