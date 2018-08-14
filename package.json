@@ -21,6 +21,7 @@
     "raw-loader": "^0.5.1"
   },
   "dependencies": {
+    "nightrun": "^0.1.2",
     "phaser": "^3.3.0"
   }
 }
