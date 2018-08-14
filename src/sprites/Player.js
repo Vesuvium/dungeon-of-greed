@@ -1,4 +1,4 @@
-import Sprite from '../nightrun/Sprite.js';
+import {Sprite} from 'nightrun';
 
 
 class Player extends Sprite {

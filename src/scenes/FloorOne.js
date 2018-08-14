@@ -1,7 +1,7 @@
 'use strict';
 
-import Item from '../nightrun/Item.js';
-import Scene from '../nightrun/Scene.js';
+import {Item} from 'nightrun';
+import {Scene} from 'nightrun';
 import Spider from '../sprites/Spider.js';
 import Player from '../sprites/Player.js';
 

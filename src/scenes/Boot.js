@@ -1,7 +1,15 @@
-import Scene from '../nightrun/Scene.js';
-import Text from '../nightrun/ui/Text.js';
+import {Scene} from 'nightrun';
+import {Text} from 'nightrun';
 import version from '../Version.js';
 
+//import nightrun from 'nightrun';
+//console.log(nightrun.Scene);
+// when exporting as default
+
+// import {Scenes} from 'nightrun';
+// console.log(Scenes);
+// when exporting as consts
+console.log(Scene);
 
 class Boot extends Scene {
     init(phaser) {

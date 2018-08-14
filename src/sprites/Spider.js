@@ -1,4 +1,4 @@
-import Monster from '../nightrun/Monster.js';
+import {Monster} from 'nightrun';
 
 
 class Spider extends Monster {

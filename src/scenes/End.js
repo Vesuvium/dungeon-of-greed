@@ -1,5 +1,5 @@
-import Scene from '../nightrun/Scene.js';
-import Text from '../nightrun/ui/Text.js';
+import {Scene} from 'nightrun';
+import {Text} from 'nightrun';
 
 
 class End extends Scene {
