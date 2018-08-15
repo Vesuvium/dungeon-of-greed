@@ -16,6 +16,7 @@ class Boot extends Scene {
         this.button.origin(0.5, 0.5);
         this.button.event('pointerdown', () => {
             this.next('FloorOne');
+            this.next('Inventory');
         });
         this.versionText = new Text(this, `Version ${version}`, x, 550, {fill: '#fff', fontSize: '14px'});
         this.versionText.origin(0.5, 0.5);
