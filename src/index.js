@@ -3,6 +3,7 @@ import 'phaser';
 import Boot from './scenes/Boot.js';
 import End from './scenes/End.js';
 import FloorOne from './scenes/FloorOne.js';
+import Inventory from './scenes/Inventory.js';
 
 
 const config = {
@@ -27,5 +28,6 @@ const config = {
 
 const game = new Phaser.Game(config);
 game.scene.add('Boot', Boot);
+game.scene.add('Inventory', Inventory);
 game.scene.add('FloorOne', FloorOne);
 game.scene.add('End', End);
